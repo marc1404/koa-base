@@ -7,6 +7,8 @@
         "dotenv": "*",
 		"koa": "*",
         "koa-logger": "marc1404/koa-logger",
-        "koa-static": "*"
+        "koa-static": "*",
+        "koa-bodyparser": "*",
+        "koa-router": "*"
 	}
 }

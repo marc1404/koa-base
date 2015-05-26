@@ -5,6 +5,7 @@ var restart = require('restart');
 var koa = require('koa');
 var logger = require('koa-logger');
 var serve = require('koa-static');
+var bodyParser = require('koa-bodyparser');
 var port = process.env.port;
 
 if(cluster.isMaster){
@@ -22,6 +23,7 @@ function init(main){
 
     app.use(logger);
     app.use(serve('public'));
+    app.use(bodyParser);
     main(app);
     app.listen(port);
 }
