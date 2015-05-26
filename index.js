@@ -1,4 +1,6 @@
-require('dotenv').load();
+var path = require('path');
+
+require('dotenv').config({ path: path.join(__dirname, '.env') }).load();
 
 var cluster = require('cluster');
 var restart = require('restart');
