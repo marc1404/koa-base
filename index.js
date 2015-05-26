@@ -15,6 +15,7 @@ module.exports = function(main){
 };
 
 function init(main){
+    var http = require('http');
     var koa = require('koa');
     var logger = require('koa-logger');
     var serve = require('koa-static');
@@ -25,7 +26,9 @@ function init(main){
     app.use(serve('public'));
     app.use(bodyParser());
     main(app);
-    app.listen(port);
+
+    var server = http.createServer(app.callback()).listen(port);
+    app.server = server;
 }
 
 function envPath(){
