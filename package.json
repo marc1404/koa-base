@@ -1,6 +1,6 @@
 {
     "name": "koala",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "private": true,
 	"dependencies": {
 		"restart": "marc1404/restart",
