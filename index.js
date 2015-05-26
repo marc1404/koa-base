@@ -1,6 +1,4 @@
-var path = require('path');
-
-require('dotenv').config({ path: path.join(__dirname, '.env') }).load();
+require('dotenv').config({ path: envPath() }).load();
 
 var cluster = require('cluster');
 var restart = require('restart');
@@ -28,4 +26,10 @@ function init(main){
     app.use(bodyParser());
     main(app);
     app.listen(port);
+}
+
+function envPath(){
+    var path = require('path');
+
+    return path.join(process.cwd(), '.env');
 }
