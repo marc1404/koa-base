@@ -1,0 +1,12 @@
+{
+    "name": "koala",
+    "version": "0.0.1",
+    "private": true,
+	"dependencies": {
+		"restart": "marc1404/restart",
+        "dotenv": "*",
+		"koa": "*",
+        "koa-logger": "marc1404/koa-logger",
+        "koa-static": "*"
+	}
+}
