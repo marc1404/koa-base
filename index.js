@@ -2,6 +2,9 @@ require('dotenv').load();
 
 var cluster = require('cluster');
 var restart = require('restart');
+var koa = require('koa');
+var logger = require('koa-logger');
+var serve = require('koa-static');
 var port = process.env.port;
 
 if(cluster.isMaster){
@@ -15,9 +18,6 @@ module.exports = function(main){
 };
 
 function init(main){
-    var koa = require('koa');
-    var logger = require('koa-logger');
-    var serve = require('koa-static');
     var app = koa();
 
     app.use(logger);
