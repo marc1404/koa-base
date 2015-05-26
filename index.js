@@ -21,14 +21,13 @@ function init(main){
     var serve = require('koa-static');
     var bodyParser = require('koa-bodyparser');
     var app = koa();
+    var server = http.createServer(app.callback());
 
     app.use(logger);
     app.use(serve('public'));
     app.use(bodyParser());
-    main(app);
-
-    var server = http.createServer(app.callback()).listen(port);
-    app.server = server;
+    main(app, server);
+    server.listen(port);
 }
 
 function envPath(){
