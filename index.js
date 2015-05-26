@@ -6,7 +6,6 @@ var koa = require('koa');
 var logger = require('koa-logger');
 var serve = require('koa-static');
 var bodyParser = require('koa-bodyparser');
-var router = require('koa-router');
 var port = process.env.port;
 
 if(cluster.isMaster){
@@ -21,7 +20,6 @@ module.exports = function(main){
 
 function init(main){
     var app = koa();
-    app.router = router;
 
     app.use(logger);
     app.use(serve('public'));
