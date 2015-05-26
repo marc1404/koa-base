@@ -23,7 +23,7 @@ function init(main){
 
     app.use(logger);
     app.use(serve('public'));
-    app.use(bodyParser);
+    app.use(bodyParser());
     main(app);
     app.listen(port);
 }
