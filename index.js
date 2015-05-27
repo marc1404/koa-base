@@ -1,20 +1,39 @@
-require('dotenv').load({ path: envPath() });
+require('./lib/dotenv');
+require('refork');
 
 var cluster = require('cluster');
-var restart = require('restart');
 var port = process.env.PORT;
+var callbacks = {};
 
-if(cluster.isMaster){
-    console.log('Node ' + process.version + ', port ' + port);
-}
-
-module.exports = function(main){
-    var child = init.bind(this, main);
-
-    restart(child);
+exports.once = function once(callback){
+    callbacks.once = callback;
 };
 
-function init(main){
+exports.config = function config(callback){
+    callbacks.config = callback;
+};
+
+exports.run = function run(callback){
+    callbacks.run = callback;
+
+    if(cluster.isMaster){
+        master();
+    }else{
+        worker();
+    }
+};
+
+function master(){
+    console.log('Node ' + process.version + ', port ' + port);
+
+    if(callbacks.once){
+        callbacks.once();
+    }
+
+    require('clusterify');
+}
+
+function worker(){
     var http = require('http');
     var koa = require('koa');
     var logger = require('koa-logger');
@@ -25,15 +44,14 @@ function init(main){
     app.use(logger);
     app.use(serve('public'));
     app.use(bodyParser());
-    main(app);
+
+    if(callbacks.config){
+        callbacks.config(app);
+    }
 
     var server = http.createServer(app.callback()).listen(port);
 
-    app.emit('server', server);
-}
-
-function envPath(){
-    var path = require('path');
-
-    return path.join(process.cwd(), '.env');
+    if(callbacks.run){
+        callbacks.run(server);
+    }
 }

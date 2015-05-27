@@ -1,9 +1,10 @@
 {
     "name": "koala",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "private": true,
 	"dependencies": {
-		"restart": "marc1404/restart",
+		"refork": "marc1404/refork",
+        "clusterize": "marc1404/clusterify",
         "dotenv": "*",
 		"koa": "*",
         "koa-logger": "marc1404/koa-logger",
