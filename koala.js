@@ -1,4 +1,4 @@
-require('dotenv')();
+require('./dotenv')();
 
 var _ = require('lodash');
 var defaults = {
