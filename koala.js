@@ -9,7 +9,8 @@ var defaults = {
 exports.config = null;
 exports.run = null;
 
-exports.start = function start(options = {}){
+exports.start = function start(options){
+    options = options ||{};
     options = _.defaultsDeep(options, defaults);
 
     console.log('Node ' + process.version + ', port ' + options.port);
