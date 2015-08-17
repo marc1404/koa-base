@@ -1,6 +1,7 @@
 {
   "name": "koa-base",
-  "version": "0.0.1",
+  "description": "Koa base framework",
+  "version": "0.0.2",
   "main": "lib/koa-base.js",
   "dependencies": {
     "dotenv": "^1.2.0",
