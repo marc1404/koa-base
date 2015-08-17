@@ -1,12 +1,12 @@
-var koala = require('../lib/koa-base.js');
+var koa = require('../lib/koa-base.js');
 
-
-koala.config = function(app){
+koa.config = function(app){
     console.log('config');
 };
 
-koala.run = function(server){
+koa.run = function(server){
     console.log('run');
+    server.close();
 };
 
-koala.start();
+koa.start();

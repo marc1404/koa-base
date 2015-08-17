@@ -28,7 +28,7 @@ koa.run = server => {
 // start app, options are not necessary
 koa.start({
     port: 80,
-    servce: 'public'
+    serve: 'public'
 });
 ```
   
