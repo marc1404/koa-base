@@ -15,6 +15,7 @@ $ npm install koa-base
   
 ## Usage
 ```javascript
+var koaBase
 ```
   
 ## Test
