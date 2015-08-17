@@ -15,7 +15,21 @@ $ npm install koa-base
   
 ## Usage
 ```javascript
-var koaBase
+var koa = require('koa-base');
+
+koa.config = app => {
+    // configure app
+};
+
+koa.run = server => {
+    // if you need the server object for e.g. socket.io
+};
+
+// start app, options are not necessary
+koa.start({
+    port: 80,
+    servce: 'public'
+});
 ```
   
 ## Test
