@@ -1,4 +1,4 @@
-var koala = require('./index.js');
+var koala = require('../lib/koa-base.js');
 
 
 koala.config = function(app){
