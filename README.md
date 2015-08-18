@@ -22,8 +22,7 @@ Some basic packages are included out of the box:
 - [koa-logger](https://www.npmjs.com/package/koa-logger)
 - [koa-static](https://www.npmjs.com/package/koa-static)
 
-**Dotenv** will search for a *.env* file, it should contain *=* separated values which will be put into the [process.env](https://nodejs.org/api/process.html#process_process_env) object.
-For example:
+**Dotenv** will search for a *.env* file, it should contain *=* separated values which will be put into the [process.env](https://nodejs.org/api/process.html#process_process_env) object.  
 *.env*
 ```
 PORT=80
@@ -60,6 +59,10 @@ koa.start({
 });
 ```
   
+## Options
+- ```port``` will use ```process.env.PORT``` or ```80``` by default
+- ```serve``` the directory where static files will be served from (default: ```public```) 
+
 ## Test
 ```
 $ npm install -g mocha  
