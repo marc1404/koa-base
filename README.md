@@ -3,10 +3,11 @@
 [![Travis](https://img.shields.io/travis/marc1404/koa-base.svg?style=flat-square)](https://travis-ci.org/marc1404/koa-base)
 [![Code Climate](https://img.shields.io/codeclimate/github/marc1404/koa-base.svg?style=flat-square)](https://codeclimate.com/github/marc1404/koa-base)
 [![Code Climate](https://img.shields.io/codeclimate/coverage/github/marc1404/koa-base.svg?style=flat-square)](https://codeclimate.com/github/marc1404/koa-base/coverage)
-[![David](https://img.shields.io/david/marc1404/koa-base.svg?style=flat-square)](https://github.com/marc1404/koa-base/blob/master/package.json)
-[![David](https://img.shields.io/david/dev/marc1404/koa-base.svg?style=flat-square)](https://github.com/marc1404/koa-base/blob/master/package.json)
 [![npm](https://img.shields.io/npm/l/koa-base.svg?style=flat-square)](https://github.com/marc1404/koa-base/blob/master/LICENSE)
 [![npm](https://img.shields.io/npm/dm/koa-base.svg?style=flat-square)](https://www.npmjs.com/package/koa-base)
+
+[![David](https://img.shields.io/david/marc1404/koa-base.svg?style=flat-square)](https://github.com/marc1404/koa-base/blob/master/package.json)
+[![David](https://img.shields.io/david/dev/marc1404/koa-base.svg?style=flat-square)](https://github.com/marc1404/koa-base/blob/master/package.json)
 
 ## Installation
 ```bash
