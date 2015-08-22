@@ -22,6 +22,7 @@ Some basic packages are included out of the box:
 - [koa-bodyparser](https://www.npmjs.com/package/koa-bodyparser)
 - [koa-logger](https://www.npmjs.com/package/koa-logger)
 - [koa-static](https://www.npmjs.com/package/koa-static)
+- [koa-static-cache](https://www.npmjs.com/package/koa-static-cache)
 
 **Dotenv** will search for a *.env* file, it should contain *=* separated values which will be put into the [process.env](https://nodejs.org/api/process.html#process_process_env) object.  
 *.env*
@@ -40,6 +41,8 @@ This is something which most apps will need, that is why this package is include
 **koa-logger** is a development style logger which outputs requests to the console.
 
 **koa-static** will serve static files out of a directory.
+  
+**koa-static-cache** can be used instead of *koa-static* to serve static files from memory.
 
 ## Usage
 ```javascript
@@ -55,14 +58,18 @@ koa.run = server => {
 
 // start app, options are not necessary
 koa.start({
-    port: 80,
-    serve: 'public'
+    port: 80, // default: options.port || process.env.PORT || 80
+    serve: 'public', // default: 'public'
+    bodyParser: true // default: true
+    staticCache: false // default: false
 });
 ```
   
 ## Options
 - ```port``` will use ```process.env.PORT``` or ```80``` by default
 - ```serve``` the directory where static files will be served from (default: ```public```) 
+- ```bodyParser``` whether json body contents should be parsed (default: ```true```)
+- ```staticCache``` enable to serve static files from memory, requires restart to reload files (default: ```false```)
 
 ## Test
 ```
