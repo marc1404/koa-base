@@ -10,9 +10,11 @@ koa.run = function(server){
 };
 
 koa.start({
+    port: 8000,
     staticCache: false
 });
 
 koa.start({
+    port: 8001,
     staticCache: true
 });
