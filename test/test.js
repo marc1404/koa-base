@@ -1,6 +1,6 @@
 var koa = require('../lib/koa-base.js');
 
-koa.config = function(app){
+koa.config = function(){
     console.log('config');
 };
 
@@ -9,4 +9,10 @@ koa.run = function(server){
     server.close();
 };
 
-koa.start();
+koa.start({
+    staticCache: false
+});
+
+koa.start({
+    staticCache: true
+});
